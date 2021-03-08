@@ -50,6 +50,17 @@
     <br><br>
     <p>No try to solve your own! Solve for X: X - 5 = 17 :</p>
     <input type="text" id="fname" name="fname">
-    <input type="button" value="Submit" onclick="function()">
+    <button type="button" onclick="myFunction()">Submit</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() { 
+  if (fname == 22) {
+  document.getElementById("demo").innerHTML = "Correct!";
+} else {
+  document.getElementById("demo").innerHTML = "Incorrect!";
+}
+</script>
   </body>
 </html>
