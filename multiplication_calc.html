@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Multipilier Calculator | rowannerd</title>
+<style>
+html {
+font-family: sans-serif;
+background-color: rgb(150, 255, 255);
+}
+.space {
+height: 30 px;
+}
+</style>
+</head>
+<body>
+<h1>Multplier Calculator | rowannerd</h1>
+<b><span>1st number: </span><input type="text" id="a"> <br><br>
+<span>2nd number: </span><input type="text" id="b"> <br><br>
+<button onclick="tick()">Render Table</button>
+<div id="table"></div>
+<script>
+function tick() {
+var a = document.getElementById("a").value;
+var b = document.getElementById("b").value;
+document.getElementById('table').innerHTML = a + "x" + b + "" + "=" + a*b;
+}
+</script>
+</body>
+</html>
