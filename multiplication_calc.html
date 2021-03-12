@@ -16,10 +16,10 @@ height: 30 px;
 <h1>Multplier Calculator | rowannerd</h1>
 <b><span>1st number: </span><input type="text" id="a"> <br><br>
 <span>2nd number: </span><input type="text" id="b"> <br><br>
-<button onclick="tick()">Render Table</button>
+<button onclick="solve()">Multiply</button>
 <div id="table"></div>
 <script>
-function tick() {
+function solve() {
 var a = document.getElementById("a").value;
 var b = document.getElementById("b").value;
 document.getElementById('table').innerHTML = a + "x" + b + "" + "=" + a*b;
