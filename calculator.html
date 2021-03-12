@@ -24,18 +24,18 @@ height: 30 px;
     var a = document.getElementById("a").value;
     var b = document.getElementById("b").value;
     var op = document.getElementById("op").value;
-    var equals;
+    var equals = a+b;
     op();
     document.getElementById('table').innerHTML = a + "op" + b + "" + "=" + equals;
   }
   function op() {
-    if (op == '+') {
+    if (op == "+") {
       equals = a + b;
-    } else if (op == '-') {
+    } else if (op == "-") {
       equals = a - b;
-    } else if (op == '*' || op == 'x') {
+    } else if (op == "*" || op == "x") {
       equals = a * b
-    } else if (op == '/') {
+    } else if (op == "/") {
       equals = a/b;
     } else {
       equals = "Error! Not correct operation!";
