@@ -17,7 +17,7 @@ height: 30 px;
 <b><span>1st number: </span><input type="text" id="a"> <br><br>
 <span>Operator (+, -, *, /): </span><input type="text" id="op"> <br><br>
 <span>2nd number: </span><input type="text" id="b"> <br><br>
-<button onclick="solve()">Solve</button>
+<button onclick="solve()">Solve Equation</button>
 <div id="table"></div>
 <script>
   function solve() {
@@ -35,7 +35,7 @@ height: 30 px;
     } else {
       var equals = "Error! Not correct operation!";
     }
-    operation();
+    //operation();
     document.getElementById('table').innerHTML = a + op + b + "" + "=" + equals;
   }
   }
