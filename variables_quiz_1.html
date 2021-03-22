@@ -22,15 +22,24 @@
       .nopacity {
         opactiy: 0;
       }
+      button {
+        background-color: red;
+        color: white;
+        width: 100px;
+        height: 100px;
+      }
     </style>
   </head>
   <body>
     <div id="header">
       <h1 class="middle nopacity">Variables Quiz | rowannerd</h1>
     </div>
+    <button>Submit</button>
+    <div id="submitted"></div>
     <script>
       function submit() {
-        
+        document.getElementById("submitted").innerHTML = "Your results: ";
+      }
     </script>
   </body>
 </html>
