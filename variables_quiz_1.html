@@ -75,6 +75,7 @@
     <div id="submitted"></div>
     <div id="results1"></div>
     <div id="results2"></div>
+    <div id="results3"></div>
     <script>
       function submit() {
         document.getElementById("submitted").innerHTML = "Your results: ";
@@ -106,6 +107,11 @@
           document.getElementById("results2").innerHTML = "Q1: Correct";
         } else {
           document.getElementById("results2").innerHTML = "Q1: Incorrect";
+        }
+        if (q2A) {
+          document.getElementById("results3").innerHTML = "Q2: Correct";
+        } else {
+          document.getElementById("results3").innerHTML = "Q2: Incorrect";
         }
       }
     </script>
