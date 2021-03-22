@@ -78,10 +78,35 @@
     <script>
       function submit() {
         document.getElementById("submitted").innerHTML = "Your results: ";
+        
+        findResults();
       }
       function findResults() {
         var q1A = document.getElementById("q1").value;
         var q2A = document.getElementById("q2").value;
+        if (q1A == 9) {
+          q1A = true
+        } else {
+          q1A = false
+        }
+        
+        if (q2A == 3) {
+          q2A = true
+        } else {
+          q2A = false
+        }
+        if (q1A && q2A) {
+          document.getElementById("results1").innerHTML = "Score: 100";
+        } else if (q1A || q2A) {
+          document.getElementById("results1").innerHTML = "Score: 50";
+        } else {
+          document.getElementById("results1").innerHTML = "Score: 0";
+        }
+        if (q1A) {
+          document.getElementById("results2").innerHTML = "Q1: Correct";
+        } else {
+          document.getElementById("results2").innerHTML = "Q1: Incorrect";
+        }
       }
     </script>
   </body>
