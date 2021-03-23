@@ -40,7 +40,9 @@
     <div id="score"></div>
     <script>
       function randomize() {
-        
+        var number = math.random();
+        number*=20;
+        document.getElementById("message").innerHTML = number;
       }
       function guess() {
         
