@@ -50,6 +50,7 @@
     <div id="score"></div>
     <script>
       var number = 0;
+      var tries = 0;
       function randomize() {
         number = Math.random();
         number*=20;
@@ -59,9 +60,14 @@
         document.getElementById("message").innerHTML = number;
       }
       function guess() {
+        tries++;
         var answer = document.getElementById("guess").value;
         var message = document.getElementById("message");
-        
+        if (answer == number) {
+          message.innerHTML = "You got it! It was " + number;
+        }
+        message.innerHTML = number;
+            
       }
       //randomize();
     </script>
