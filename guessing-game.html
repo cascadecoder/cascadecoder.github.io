@@ -48,6 +48,7 @@
     <div id="message">
     </div>
     <div id="score"></div>
+    <div id="demo"></div>
     <script>
       var number = 0;
       var tries = 0;
@@ -80,7 +81,8 @@
           message.innerHTML = "Enter a number!";
         }
         //document.getElementById("score").innerHTML = number;
-            
+        var demo = document.getElementById("demo");
+        demo.innerHTML = message.value;
       }
       //randomize();
     </script>
