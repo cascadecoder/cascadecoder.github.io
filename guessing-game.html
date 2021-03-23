@@ -70,7 +70,7 @@
           document.getElementById("score").innerHTML = "You got it in " + tries + " tries.";
           document.getElementById("start").style.visibility = 'visible';
         } else if (!answer == "") {
-          message.innerHTML = "Nope! Try again!" + number;
+          message.innerHTML = "Nope! Try again! " + number + " Your answer:" + answer + "; Your answer+number=" + (answer+number);
           if (answer > number) {
             document.getElementById("score").innerHTML = "Lower!";
           } else if (answer < number) {
