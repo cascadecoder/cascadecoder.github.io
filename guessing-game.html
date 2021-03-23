@@ -60,10 +60,12 @@
         document.getElementById("game").style.visibility = 'visible';
         document.getElementById("start").style.visibility = 'hidden';
         //document.getElementById("message").innerHTML = number;
+        
       }
       function guess() {
         tries++;
         var answer = document.getElementById("guess").value;
+        answer = number(answer); // added by dad
         var message = document.getElementById("message");
         if (answer == number) {
           message.innerHTML = "You got it! It was " + number;
