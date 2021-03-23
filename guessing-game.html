@@ -20,19 +20,29 @@
       button:hover {
         background-color: black;
       }
+      #game {
+        visibility: hidden;
+      }
+      #start {
+        visibility: visible;
+      }
     </style>
   </head>
   <body>
     <h1 class="middle">Guessing Game | rowannerd</h1>
-    <p>Objective: correctly guess the number I will randomly come up with!</p>
+    <p>Objective: Correctly guess the number I will randomly come up with!</p>
     <br>
     <br>
+    <button onclick="randomize()" id="start">Start Game</button>
+    <div id="game">
     <p>I am thinking of a number between 1 and 50</p>
     <br>
     <br>
+    
     <p>Guess:</p>
     <input type="text" id="guess">
     <button onclick="guess()">Guess</button>
+    </div>
     <br>
     <br>
     <div id="message">
@@ -40,14 +50,17 @@
     <div id="score"></div>
     <script>
       function randomize() {
-        var number = math.random();
+        var number = Math.random();
         number*=20;
+        number = number.toFixed(0);
+        document.getElementById("game").style.visibility = 'visible';
+        document.getElementById("start").style.visibility = 'hidden';
         document.getElementById("message").innerHTML = number;
       }
       function guess() {
         
       }
-      randomize();
+      //randomize();
     </script>
   </body>
 </html>
