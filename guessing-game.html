@@ -70,9 +70,9 @@
         } else if (!answer == "") {
           message.innerHTML = "Nope! Try again!";
           if (answer > number) {
-            document.getElementById("score").innerHTML = "Higher!";
-          } else if (answer < number) {
             document.getElementById("score").innerHTML = "Lower!";
+          } else if (answer < number) {
+            document.getElementById("score").innerHTML = "Higher!";
           } else {
             document.getElementById("score").innerHTML = "Enter a number, not a letter or symbol!";
           }
