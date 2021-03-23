@@ -65,7 +65,7 @@
       function guess() {
         tries++;
         var answer = document.getElementById("guess").value;
-        answer = number(answer); // added by dad
+        answer = Number(answer); // added by dad
         var message = document.getElementById("message");
         if (answer == number) {
           message.innerHTML = "You got it! It was " + number;
