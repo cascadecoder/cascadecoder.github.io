@@ -64,7 +64,7 @@
         number = number.toFixed(0);
         document.getElementById("game").style.visibility = 'visible';
         document.getElementById("start").style.visibility = 'hidden';
-        document.getElementById("message").innerHTML = number;
+        //document.getElementById("message").innerHTML = number;
       }
       function guess() {
         tries++;
@@ -72,8 +72,14 @@
         var message = document.getElementById("message");
         if (answer == number) {
           message.innerHTML = "You got it! It was " + number;
+          document.getElementById("score").innerHTML = "You got it in " + tries + "tries.";
+          document.getElementById("start").style.visibility = 'visible';
+        } else if (!answer == "") {
+          message.innerHTML = "Nope! Try again!";
+        } else {
+          message.innerHTML = "Enter a number!";
         }
-        document.getElementById("score").innerHTML = number;
+        //document.getElementById("score").innerHTML = number;
             
       }
       //randomize();
