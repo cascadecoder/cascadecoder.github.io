@@ -49,8 +49,9 @@
     </div>
     <div id="score"></div>
     <script>
+      var number = 0;
       function randomize() {
-        var number = Math.random();
+        number = Math.random();
         number*=20;
         number = number.toFixed(0);
         document.getElementById("game").style.visibility = 'visible';
@@ -58,6 +59,8 @@
         document.getElementById("message").innerHTML = number;
       }
       function guess() {
+        var answer = document.getElementById("guess").value;
+        var message = document.getElementById("message");
         
       }
       //randomize();
