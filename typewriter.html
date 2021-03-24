@@ -38,9 +38,10 @@
     <div id="paste"></div>
     <script>
       var done = 0;
+      var text = 0;
       function tick() {
         if (done == 0) {
-          var text = document.getElementById("text").value;
+          text = document.getElementById("text").value;
           document.getElementById("paste").innerHTML = "text";
           tick();
         }
