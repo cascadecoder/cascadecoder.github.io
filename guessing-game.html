@@ -46,10 +46,12 @@
     </div>
     <br>
     <br>
+    <div id="responce">
     <div id="message">
     </div>
     <div id="score"></div>
     <div id="demo"></div>
+    </div>
     <script>
       var number = 0;
       //var tries = 0;
@@ -65,15 +67,15 @@
       function guess() {
         tries++;
         var answer = document.getElementById("guess").value;
-        answer = Number(answer); // added by dad
-        number=Number(number); // added by dad
+        answer = Number(answer); // Number() makes it a number
+        number=Number(number); // Number() makes it a number
         var message = document.getElementById("message");
         if (answer == number) {
           message.innerHTML = "You got it! It was " + number;
           document.getElementById("score").innerHTML = "You got it in " + tries + " tries.";
           document.getElementById("start").style.visibility = 'visible';
           document.getElementById("game").style.visibility = 'hidden';
-          
+          document.getElementById("responce").innerHTML = "";
         } else if (!answer == "") {
           message.innerHTML = "Nope! Try again! Tries so far: " + tries;
           if (answer > number) {
@@ -87,8 +89,8 @@
           message.innerHTML = "Enter a number!";
         }
         //document.getElementById("score").innerHTML = number;
-        var demo = document.getElementById("guess");
-        demo.innerHTML = message.value;
+        //var demo = document.getElementById("guess");
+        //demo.innerHTML = message.value;
       }
       //randomize();
     </script>
