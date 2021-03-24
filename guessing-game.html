@@ -62,7 +62,7 @@
         document.getElementById("game").style.visibility = 'visible';
         document.getElementById("start").style.visibility = 'hidden';
         //document.getElementById("message").innerHTML = number;
-        var tries=0;
+        var tries = 0;
       }
       function guess() {
         tries++;
@@ -74,7 +74,7 @@
           message.innerHTML = "You got it! It was " + number;
           document.getElementById("score").innerHTML = "You got it in " + tries + " tries.";
           document.getElementById("start").style.visibility = 'visible';
-          //document.getElementById("game").style.visibility = 'hidden';
+          document.getElementById("game").style.visibility = 'hidden';
           
         } else if (!answer == "") {
           message.innerHTML = "Nope! Try again! Tries so far: " + tries;
