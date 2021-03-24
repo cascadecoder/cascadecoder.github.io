@@ -53,7 +53,9 @@
     <script>
       var number = 0;
       var tries = 0;
+      var win = 0;
       function randomize() {
+        tries = 0;
         number = Math.random();
         number*=10;
         number = number.toFixed(0);
@@ -62,9 +64,10 @@
         document.getElementById("score").style.visibility = 'hidden';
         document.getElementById("message").style.visibility = 'hidden';
         //document.getElementById("message").innerHTML = number;
-        
+        win = 0;
       }
       function guess() {
+        if (win == 0) {
         tries++;
         document.getElementById("score").style.visibility = 'visible';
         document.getElementById("message").style.visibility = 'visible';
@@ -76,6 +79,7 @@
           message.innerHTML = "You got it! It was " + number;
           document.getElementById("score").innerHTML = "You got it in " + tries + " tries.";
           document.getElementById("start").style.visibility = 'visible';
+          win++;
         } else if (!answer == "") {
           message.innerHTML = "Nope! Try again!" + " Your answer: " + answer + " Tries so far: " + tries;
           if (answer > number) {
@@ -91,6 +95,7 @@
         //document.getElementById("score").innerHTML = number;
         var demo = document.getElementById("guess");
         //demo.innerHTML = message.value;
+        }
       }
       //randomize();
     </script>
