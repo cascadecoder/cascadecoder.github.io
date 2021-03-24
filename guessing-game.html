@@ -52,7 +52,7 @@
     <div id="demo"></div>
     <script>
       var number = 0;
-      var tries = 0;
+      //var tries = 0;
       function randomize() {
         number = Math.random();
         number*=10;
@@ -60,7 +60,7 @@
         document.getElementById("game").style.visibility = 'visible';
         document.getElementById("start").style.visibility = 'hidden';
         //document.getElementById("message").innerHTML = number;
-        
+        var tries=0;
       }
       function guess() {
         tries++;
@@ -72,8 +72,10 @@
           message.innerHTML = "You got it! It was " + number;
           document.getElementById("score").innerHTML = "You got it in " + tries + " tries.";
           document.getElementById("start").style.visibility = 'visible';
+          document.getElementById("game").style.visibility = 'hidden';
+          
         } else if (!answer == "") {
-          message.innerHTML = "Nope! Try again! " + number + " Your answer:" + answer + "; Your answer+number=" + (answer+number);
+          message.innerHTML = "Nope! Try again! Tries so far: " + tries;
           if (answer > number) {
             document.getElementById("score").innerHTML = "Lower!";
           } else if (answer < number) {
