@@ -36,7 +36,7 @@
     <br>
     <button onclick="randomize()" id="start">Start Game</button>
     <div id="game">
-    <p>I am thinking of a number between 1 and 20</p>
+    <p>I am thinking of a number between 1 and 10</p>
     <br>
     <br>
     
@@ -73,7 +73,7 @@
           document.getElementById("score").innerHTML = "You got it in " + tries + " tries.";
           document.getElementById("start").style.visibility = 'visible';
         } else if (!answer == "") {
-          message.innerHTML = "Nope! Try again! " + number + " Your answer:" + answer + "; Your answer+number=" + (answer+number);
+          message.innerHTML = "Nope! Try again! " + number + " Your answer: " + answer + " Tries so far: " + tries;
           if (answer > number) {
             document.getElementById("score").innerHTML = "Lower!";
           } else if (answer < number) {
