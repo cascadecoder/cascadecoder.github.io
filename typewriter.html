@@ -38,13 +38,14 @@
     </div>
     <div id="paste"></div>
     <script>
+      var text = "";
       //var done = 0;
       function done() {
         //done = 1;
-        var text = document.getElementById("text").value;
+        text = text + " " + document.getElementById("text").value;
         document.getElementById("paste").innerHTML = text;
         
-        document.getElementById("input").style.visibility = 'hidden';
+        //document.getElementById("input").style.visibility = 'hidden';
       }
           
 
