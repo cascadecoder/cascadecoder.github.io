@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>To-do list | rowannerd</title>
+<style>
+body {
+font-family: sans-serif;
+height: 100px;
+}
+</style>
+</head>
+<body>
+<p>Text Here: </p>
+<input type="text" id="text">
+<button onclick="myFunction()">Change Text</button>
+<input type="text" id="do" value="">
+<button onclick="deletestuff()">Delete</button>
+<div id="display"></div>
+<script>
+var text = [];
+var input = 0;
+var deletein = 0;
+function add(id, value) { 
+document.getElementById(id).innerHTML = value; 
+}
+function myFunction() {
+input = document.getElementById("text").value;
+text.push("<br>" + input);
+add("display", text);
+}
+function deletestuff() {
+deletein = document.getElementById("do").value;
+text.splice(deletein - 1, 1);
+add("display", text);
+}
+add("display", text);
+</script>
+</body>
+</html>
