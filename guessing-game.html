@@ -59,11 +59,15 @@
         number = number.toFixed(0);
         document.getElementById("game").style.visibility = 'visible';
         document.getElementById("start").style.visibility = 'hidden';
+        document.getElementById("score").style.visibility = 'hidden';
+        document.getElementById("message").style.visibility = 'hidden';
         //document.getElementById("message").innerHTML = number;
         
       }
       function guess() {
         tries++;
+        document.getElementById("score").style.visibility = 'visible';
+        document.getElementById("message").style.visibility = 'visible';
         var answer = document.getElementById("guess").value;
         answer = Number(answer); // added by dad
         number=Number(number); // added by dad
