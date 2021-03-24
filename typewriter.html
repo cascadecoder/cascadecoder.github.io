@@ -42,16 +42,17 @@
       function tick() {
         if (done == 0) {
           text = document.getElementById("text").value;
-          document.getElementById("paste").innerHTML = "text";
+          document.getElementById("paste").innerHTML = text;
+          function done() {
+            done = 1;
+            var input = document.getElementById("input");
+            input.style.visibility = 'hidden';
+          }
           tick();
         }
       }
+      
       tick();
-      function done() {
-        done = 1;
-        var input = document.getElementById("input");
-        input.style.visibility = 'hidden';
-      }
     </script>
   </body>
 </html>
