@@ -47,17 +47,29 @@
       <p>Now it's time for you to test out your new skills in this practice problem:</p>
       <br>
       <div class="quiz">
-        <h3 class="middle">Practice #1</h3>
-        <p>Solve:</p>
-        <br>
-        <p>12<br><u>+9</u></p>
-        <input type="text" id="1">
-        <button onclick="submit(1)">Submit</button>
+        <div id="1-1">
+          <h3 class="middle">Practice #1</h3>
+          <p>Solve:</p>
+          <br>
+          <p>12<br><u>+9</u></p>
+          <input type="text" id="1t">
+          <button onclick="submit(1, 21)">Submit</button>
+        </div>
         <div id="1s"></div>
       </div>
     </div>
     <script>
-      function submit(id) {
+      var display;
+      var current = 1;
+      function submit(id, answer) {
+        display = document.getElementById(id + "s");
+        var input = Number(document.getElementById(id + "t").value);
+        if (input == answer) {
+          display.innerHTML = "Correct! It was " + answer + "!";
+        } else {
+          display.innerHTML = "Incorrect!";
+        }
+        document.getElementById("1-1").style.visbility = 'hidden';
       }
     </script>
   </body>
