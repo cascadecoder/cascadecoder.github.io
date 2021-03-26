@@ -103,7 +103,9 @@
         }
         document.getElementById(id + "a").style.visibility = 'hidden';
         document.getElementById(id + "b").style.visibility = 'visible';
-        document.getElementById(id + "ba").style.visibility = 'visible';
+        if (id > 1) {
+          document.getElementById(id + "ba").style.visibility = 'visible';
+        }
       }
       function next(current) {
         document.getElementById(current).style.display = 'none';
