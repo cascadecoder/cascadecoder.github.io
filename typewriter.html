@@ -34,14 +34,20 @@
     <button onclick="sentence()">Add Sentence</button>
     <button onclick="lineBreak()">Add Line Break</button>
     <button onclick="paragraph()">Add Paragraph</button>
-          
+    <button onclick="blue()">Set Color to Blue</button>
+    <p id="visual">Color and Size Visual</p>      
     <br><br>
           <p>Type your text here: </p><input type"text" id="text" width="50px" height="50px">
     <br><br>
     <div id="paste"></div>
     <script>
       var text = "";
+      var elm = "";
+      var textc = "";
       var  paste = document.getElementById("paste");
+      function element(id) {
+        elm = document.getElementById(id);
+      }
       function sentence() {
         text = text + " " + document.getElementById("text").value;
         paste.innerHTML = text;
@@ -57,6 +63,11 @@
       function paragraph() {
         text = text + "<br><br>";
         paste.innerHTML = text;
+      }
+      function blue() {
+        element("visual");
+        elm.style.color = 'rgb(0, 10, 240)';
+        textc = 'rgb(0, 10, 240)';
       }
 
       
