@@ -35,7 +35,7 @@
     <button onclick="lineBreak()">Add Line Break</button>
     <button onclick="paragraph()">Add Paragraph</button>
     <button onclick="resetColor()">Reset Color</button>
-    <button onclick="blue()">Set Color to Blue</button>
+    <button onclick="color('blue')">Set Color to Blue</button>
     <p id="visual">Color and Size Visual</p>      
     <br><br>
           <p>Type your text here: </p><input type"text" id="text" width="50px" height="50px">
@@ -73,10 +73,22 @@
         element("visual");
         elm.style.color = 'rgb(0, 0, 0)';
       }
-      function blue() {
-        element("visual");
-        elm.style.color = 'rgb(0, 10, 240)';
-        textc = 'rgb(0, 10, 240)';
+      function color(color) {
+        if (color == "blue") {
+          element("visual");
+          elm.style.color = 'rgb(0, 10, 240)';
+          textc = 'rgb(0, 10, 240)';
+        } else if (color == "red") {
+          element("visual");
+          elm.style.color = 'rgb(250, 0, 0)';
+          textc = 'rgb(250, 0, 0)';
+        } else if(color == "green") {
+          textc = 'rgb(0, 250, 10)';
+          element("visual");
+          elm.style.color = textc;
+        } else {
+          paste.innerHTML = "ERROR IN CODE!";
+        }
       }
 
       
