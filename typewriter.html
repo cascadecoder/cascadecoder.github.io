@@ -46,12 +46,15 @@
       var elm = "";
       var textc = "";
       var  paste = document.getElementById("paste");
+      var addText = "";
       function element(id) {
         elm = document.getElementById(id);
       }
       function sentence() {
-        text = text + " " + document.getElementById("text").value;
-        paste.innerHTML = text;
+        addText = document.getElementById("text").value;
+        addText = "<p style='color: " + textc + "'>" + addText + "</p>";
+        text = text + " ";
+        paste.innerHTML = text + addText;
       }
       function clearAll() {
         text = "";
