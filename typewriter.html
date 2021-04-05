@@ -34,6 +34,7 @@
     <button onclick="sentence()">Add Sentence</button>
     <button onclick="lineBreak()">Add Line Break</button>
     <button onclick="paragraph()">Add Paragraph</button>
+    <button onclick="resetColor()">Reset Color</button>
     <button onclick="blue()">Set Color to Blue</button>
     <p id="visual">Color and Size Visual</p>      
     <br><br>
@@ -63,6 +64,11 @@
       function paragraph() {
         text = text + "<br><br>";
         paste.innerHTML = text;
+      }
+      function resetColor() {
+        textc = 'rgb(0, 0, 0)';
+        element("visual");
+        elm.style.color = 'rgb(0, 0, 0)';
       }
       function blue() {
         element("visual");
