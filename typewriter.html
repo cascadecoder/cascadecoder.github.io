@@ -53,8 +53,8 @@
       function sentence() {
         addText = document.getElementById("text").value;
         addText = "<p style='color: " + textc + "'>" + addText + "</p>";
-        text = text + " ";
-        paste.innerHTML = text + addText;
+        text = text + " " + addText;
+        paste.innerHTML = text;
       }
       function clearAll() {
         text = "";
