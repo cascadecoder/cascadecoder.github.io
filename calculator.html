@@ -2,13 +2,14 @@
 <html>
   <head>
     <title>Calculator | rowannerd</title>
+    <link rel=="stylesheet" href="cascadecoder.github.io/rowannerd.css">
     <style>
       html {
         font-family: sans-serif;
-        background-color: rgb(150, 255, 255);
+        //background-color: rgb(150, 255, 255);
       }
       .space {
-        height: 30 px;
+        height: 30px;
       }
       button {
         color: white;
@@ -22,11 +23,12 @@
     </style>
   </head>
   <body>
-    <h1>Calculator | rowannerd</h1>
+    <h1>Calculator | <span id="rowannerd">rowannerd</span></h1>
     <b><span>1st number: </span><input type="text" id="a"> <br><br>
     <span>Operator (+, -, *, /): </span><input type="text" id="op"> <br><br>
     <span>2nd number: </span><input type="text" id="b"> <br><br>
-    <button onclick="solve()">Solve Equation</button>
+      <button onclick="solve()">Solve Equation</button>
+      <div id="space"></div>
     <div id="table"></div>
     <script>
       function solve() {
