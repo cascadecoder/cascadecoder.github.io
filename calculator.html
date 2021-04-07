@@ -1,45 +1,45 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Calculator | rowannerd</title>
-<style>
-html {
-font-family: sans-serif;
-background-color: rgb(150, 255, 255);
-}
-.space {
-height: 30 px;
-}
-</style>
-</head>
-<body>
-<h1>Calculator | rowannerd</h1>
-<b><span>1st number: </span><input type="text" id="a"> <br><br>
-<span>Operator (+, -, *, /): </span><input type="text" id="op"> <br><br>
-<span>2nd number: </span><input type="text" id="b"> <br><br>
-<button onclick="solve()">Solve Equation</button>
-<div id="table"></div>
-<script>
-  function solve() {
-    var a = document.getElementById("a").value;
-    var b = document.getElementById("b").value;
-    var op = document.getElementById("op").value;
-    if (op == "+") {
-      var equals = a + b;
-    } else if (op == "-") {
-      var equals = a - b;
-    } else if (op == "*" || op == "x") {
-      var equals = a * b
-    } else if (op == "/") {
-      var equals = a/b;
-    } else {
-      var equals = "Error! Not correct operation!";
-    }
-    //operation();
-    document.getElementById('table').innerHTML = a + op + b + "" + "=" + equals;
-  }
-  }
+  <head>
+    <title>Calculator | rowannerd</title>
+    <style>
+      html {
+        font-family: sans-serif;
+        background-color: rgb(150, 255, 255);
+      }
+      .space {
+        height: 30 px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Calculator | rowannerd</h1>
+    <b><span>1st number: </span><input type="text" id="a"> <br><br>
+    <span>Operator (+, -, *, /): </span><input type="text" id="op"> <br><br>
+    <span>2nd number: </span><input type="text" id="b"> <br><br>
+    <button onclick="solve()">Solve Equation</button>
+    <div id="table"></div>
+    <script>
+      function solve() {
+        var a = document.getElementById("a").value;
+        var b = document.getElementById("b").value;
+        var op = document.getElementById("op").value;
+        a = Number(a);
+        b = Number(b);
+        if (op == "+") {
+          var equals = a + b;
+        } else if (op == "-") {
+          var equals = a - b;
+        } else if (op == "*" || op == "x") {
+          var equals = a * b
+        } else if (op == "/") {
+          var equals = a/b;
+        } else {
+          var equals = "Error! Not correct operation!";
+        }
+        document.getElementById('table').innerHTML = a + op + b + "" + "=" + equals;
+      }
       
-</script>
-</body>
+    </script>
+  </body>
 </html>
