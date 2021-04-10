@@ -20,14 +20,15 @@
     <script>
       var canvas = document.getElementById("canvas");
       var ctx = canvas.getContext("2d");
-      var player = [10, 0]
+      //var player = [10, 0]
+      var playery = 0;
       function drawBackground() {
         //ctx.fillStyle = "rgb(255, 255, 200)";
         //ctx.fillRect(0, 0, 300, 300);
         ctx.fillStyle = "black";
         ctx.fillRect(0, 0, 300, 300);
         ctx.fillStyle = "white";
-        ctx.fillRect(player[0], player[1], 20, 10);
+        ctx.fillRect(10, playery, 20, 10);
       }
       function tick() {
         drawBackground();
@@ -37,9 +38,9 @@
       tick();
       function move(a) {
         if (a == "up") {
-          player[1] += 1;
+          playery += 1;
         } else {
-          player[1] -= 1;
+          playery -= 1;
         }
       }
     </script>
