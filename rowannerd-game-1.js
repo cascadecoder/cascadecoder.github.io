@@ -3,8 +3,8 @@
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
 function drawBackground() {
-  ctx.fillStyle = "rgb(255, 255, 200)";
-  ctx.fillRect(0, 0, 300, 300);
+  //ctx.fillStyle = "rgb(255, 255, 200)";
+  //ctx.fillRect(0, 0, 300, 300);
   ctx.fillStyle = "black";
   ctx.fillRect(20, 20, 30, 30);
 }
