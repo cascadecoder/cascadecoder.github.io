@@ -16,25 +16,32 @@
   </head>
   <body>
     <h1>Play Space Dodge | rowannerd</h1>
-    <canvas id="canvas"></canvas><button>Up</button><button>Down</button>
+    <canvas id="canvas"></canvas><button onclick="move('up')">Up</button><button onclick="move('down')">Down</button>
     <script>
-    var canvas = document.getElementById("canvas");
-    var ctx = canvas.getContext("2d");
+      var canvas = document.getElementById("canvas");
+      var ctx = canvas.getContext("2d");
       var player = [10, 0]
-    function drawBackground() {
-      //ctx.fillStyle = "rgb(255, 255, 200)";
-      //ctx.fillRect(0, 0, 300, 300);
-      ctx.fillStyle = "black";
-      ctx.fillRect(0, 0, 300, 300);
-      ctx.fillStyle = "white";
-      ctx.fillRect(player[0], player[1], 20, 10);
-    }
-    function tick() {
-      drawBackground();
-      //ctx.clearRect(0, 0, 300, 300);
+      function drawBackground() {
+        //ctx.fillStyle = "rgb(255, 255, 200)";
+        //ctx.fillRect(0, 0, 300, 300);
+        ctx.fillStyle = "black";
+        ctx.fillRect(0, 0, 300, 300);
+        ctx.fillStyle = "white";
+        ctx.fillRect(player[0], player[1], 20, 10);
+      }
+      function tick() {
+        drawBackground();
+        //ctx.clearRect(0, 0, 300, 300);
+        tick();
+      }
       tick();
-    }
-    tick();
+      function move(a) {
+        if (a == "up") {
+          player[1] += 1;
+        } else {
+          player[1] -= 1;
+        }
+      }
     </script>
   </body>
 </html>
