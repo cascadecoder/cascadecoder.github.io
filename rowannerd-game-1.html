@@ -16,7 +16,7 @@
   </head>
   <body>
     <h1>Play Space Dodge | rowannerd</h1>
-    <canvas id="canvas"></canvas><button onclick="move('up')">Up</button><button onclick="move('down')">Down</button>
+    <canvas id="canvas"></canvas><button onclick="playery++">Up</button><button onclick="playery--">Down</button>
     <script>
       var canvas = document.getElementById("canvas");
       var ctx = canvas.getContext("2d");
@@ -36,13 +36,6 @@
         tick();
       }
       tick();
-      function move(a) {
-        if (a == "up") {
-          playery += 1;
-        } else {
-          playery -= 1;
-        }
-      }
     </script>
   </body>
 </html>
