@@ -52,23 +52,27 @@
       function element(id) {
         elm = document.getElementById(id);
       }
+      function paste(t) {
+        paste.innerHTML = t;
+        document.getElementById("text").value="";
+      }
       function sentence() {
         addText = document.getElementById("text").value;
         addText = "<span style='color: " + textc + "'>" + addText + "</span>";
         text = text + " " + addText;
-        paste.innerHTML = text;
+        paste(text);
       }
       function clearAll() {
         text = "";
-        paste.innerHTML = text;
+        paste(text);
       }   
       function lineBreak() {
         text = text + "<br>";
-        paste.innerHTML = text;
+        paste(text);
       }
       function paragraph() {
         text = text + "<br><br>";
-        paste.innerHTML = text;
+        paste(text);
       }
       function resetColor() {
         textc = 'rgb(0, 0, 0)';
