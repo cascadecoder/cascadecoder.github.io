@@ -75,6 +75,7 @@
         answer = Number(answer); // added by dad
         number=Number(number); // added by dad
         var message = document.getElementById("message");
+          document.getElementById("guess").value="";
         if (answer == number) {
           message.innerHTML = "You got it! It was " + number;
           document.getElementById("score").innerHTML = "You got it in " + tries + " tries.";
