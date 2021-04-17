@@ -77,14 +77,15 @@
       var text = document.getElementById("text");
       function t() {	
         ti = document.getElementById("title").value;
+        drop = document.getElementById("drop").value;
 
-        if (drop.value = "HTML sheet") {
+        if (drop = "HTML sheet") {
           type = "HTML sheet";
           hs.style.display="block";
           html.innerHTML = text.value;
           html.style.display="block";
         }
-        if(document.getElementById("drop").value="rowannerd document") {
+        if (drop = "rowannerd document") {
           type = "rowannerd document";
           hs.style.display="none";
           html.style.display="none";
