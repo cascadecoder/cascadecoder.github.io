@@ -82,9 +82,11 @@
           type = "HTML sheet";
           hs.style.display="block";
           html.innerHTML = text.value;
+          html.style.display="block";
         } else if(drop.value="rowannerd document") {
           type = "rowannerd document";
           hs.style.display="none";
+          html.style.display="none";
         }
 
         document.title = ti + " | " + type;
