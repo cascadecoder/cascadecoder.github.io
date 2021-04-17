@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Documents | rowannerd</title>
+    <style>
+      body {
+          font-family: monospace;
+          background-color: rgb(138, 220, 255);
+        }
+        button {
+          height: 50px;
+          color: white;
+          background-color: red;
+        }
+        button:hover {
+          background-color: black;
+        }
+      </style>
+    </head>
+    <body>
+
+      <div id="start">
+
+        <h1>rowannerd | documents</h1>
+        <button onclick="createNew()">Create New Document</button>
+
+      </div>
+
+      <div id="document" style="display:none">
+        <span>Title:</span>
+        <input type="text" id="title">
+        <Br><br>
+        <textarea rows="10" cols="40" id="text"></textarea>
+        <br>
+        <br>
+        <span>Choose a document type:</span>
+        <select id="drop">
+          <option value = "document"> rowannerd document 
+          </option>
+          <option value = "html"> HTML sheet 
+          </option>
+        </select>
+        <br>
+        <br>
+        <button onclick="t()">Update</button>
+        <br><br><br>
+        <div id="htmld">
+        <span>HTML result here:</span>
+        <br><span>-------------------</span><br><br>
+        <div id="html"></div>
+      </div>
+    </div>
+
+    <!-- End Display -->
+
+    <script>
+      var startm = "";
+
+      function createNew() {
+        startm = document.getElementById("start");
+        startm.style.display="none";
+        document.title = "Untitled | rowannerd document";
+        var board = document.getElementById("document");
+        board.style.display = "block";
+      }
+
+      var ti="";
+      var type="rowannerd document";
+      var hs=document.getElementById("htmld");
+      var html = document.getElementById("html");
+      hs.style.display="none";
+      var drop = document.getElementById("drop");
+      var text = document.getElementById("text");
+      function t() {	
+        ti = document.getElementById("title").value;
+
+        if (drop.value = "HTML sheet") {
+          type = "HTML sheet";
+          hs.style.display="block";
+          html.innerHTML = text.value;
+        } else if(drop.value="rowannerd document") {
+          type = "rowannerd document";
+          hs.style.display="none";
+        }
+
+        document.title = ti + " | " + type;
+      }  
+    </script>
+  </body>
+</html>
