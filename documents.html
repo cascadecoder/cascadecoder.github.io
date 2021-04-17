@@ -3,9 +3,10 @@
   <head>
     <title>Documents | rowannerd</title>
     <style>
-      body {
+        body {
           font-family: monospace;
           background-color: rgb(138, 220, 255);
+          width: 600px;
         }
         button {
           height: 50px;
@@ -15,13 +16,16 @@
         button:hover {
           background-color: black;
         }
-      </style>
-    </head>
-    <body>
+      #main {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
 
       <div id="start">
 
-        <h1>rowannerd | documents</h1>
+        <h1 id="main">rowannerd | documents</h1>
         <button onclick="createNew()">Create New Document</button>
 
       </div>
