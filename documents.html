@@ -78,12 +78,13 @@
       function t() {	
         ti = document.getElementById("title").value;
 
-        if (drop.value = "HTML sheet") {
+        if (document.getElementById("drop").value = "HTML sheet") {
           type = "HTML sheet";
           hs.style.display="block";
           html.innerHTML = text.value;
           html.style.display="block";
-        } else if(drop.value="rowannerd document") {
+        }
+        if(document.getElementById("drop").value="rowannerd document") {
           type = "rowannerd document";
           hs.style.display="none";
           html.style.display="none";
