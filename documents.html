@@ -38,21 +38,13 @@
         <br>
         <br>
         <span>Choose a document type:</span>
-        <select id="drop">
-          <option value = "document"> rowannerd document 
-          </option>
-          <option value = "html"> HTML sheet 
-          </option>
-        </select>
         <br>
         <br>
         <button onclick="t()">Update</button>
         <br><br><br>
-        <div id="htmld">
         <span>HTML result here:</span>
         <br><span>-------------------</span><br><br>
         <div id="html"></div>
-      </div>
     </div>
 
     <!-- End Display -->
@@ -75,21 +67,17 @@
       hs.style.display="none";
       var drop = document.getElementById("drop");
       var text = document.getElementById("text");
+      
       function t() {	
         ti = document.getElementById("title").value;
         drop = document.getElementById("drop").value;
 
-        if (drop = "HTML sheet") {
           type = "HTML sheet";
           hs.style.display="block";
           html.innerHTML = text.value;
           html.style.display="block";
-        }
-        if (drop = "rowannerd document") {
-          type = "rowannerd document";
-          hs.style.display="none";
-          html.style.display="none";
-        }
+
+
 
         document.title = ti + " | " + type;
       }  
