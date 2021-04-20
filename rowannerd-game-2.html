@@ -34,11 +34,12 @@
     </div>
     <script>
       var app = document.getElementById("app");
-      var list = [1, 2, 3];
+      var correct = "";
       function startGame() {
         document.getElementById("welcome").style.display="none";
         app.style.display = "block";
-        alert(list);
+        correct = Math.random();
+        alert(correct);
       }
     </script>
   </body>
