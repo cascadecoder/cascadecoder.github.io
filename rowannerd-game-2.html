@@ -39,6 +39,17 @@
         document.getElementById("welcome").style.display="none";
         app.style.display = "block";
         correct = Math.random();
+        correct *= 10;
+
+        correct = Math.round(correct);
+        while (correct > 3) {
+          correct = Math.random();
+          correct *= 10;
+          correct = Math.round(correct);
+        }
+        if (correct == 0) {
+          correct++;
+        }
         alert(correct);
       }
     </script>
