@@ -37,7 +37,8 @@
       var app = document.getElementById("app");
       var correct = "";
       var ids = [0, 0, 0];
-      
+      var colors = ["red", "yellow", "blue"];
+      var count = 0;
       function startGame() {
         document.getElementById("welcome").style.display="none";
         app.style.display = "block";
@@ -59,6 +60,15 @@
         } else {
           ids[2] = 2;
         }
+        count = 1;
+        add = "";
+        while (count < 4) {
+          if (!count == 4) {
+            add += "<div class='option' style='color: " + colors[count-1] + "' id='" + ids[count-1] + "'></div><br>";
+          }
+          count++;
+        }
+        app.innerHTML = add;
         
         
       }
