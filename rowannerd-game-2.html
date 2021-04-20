@@ -33,8 +33,10 @@
       
     </div>
     <script>
+      var add="";
       var app = document.getElementById("app");
       var correct = "";
+      var ids = [0, 0, 0]
       function startGame() {
         document.getElementById("welcome").style.display="none";
         app.style.display = "block";
@@ -50,7 +52,14 @@
         if (correct == 0) {
           correct++;
         }
-        alert(correct);
+        ids[correct-1] = 1;
+        if(!correct == 1) {
+          ids[0] = 2;
+        } else {
+          ids[2] = 2;
+        }
+        
+        
       }
     </script>
   </body>
