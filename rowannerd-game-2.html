@@ -10,6 +10,10 @@
       .option:hover {
         background-color: rgb(100, 100, 100);
       }
+      .option {
+        width: 200px;
+        height: 200px;
+      }
       button {
         background-color: red;
         color: white;
@@ -22,8 +26,18 @@
   </head>
   <body>
     <h1>Guess the Color!</h1>
-    <button onclick="startGame()">Start Game</button>
+    <div id="welcome">
+      <button onclick="startGame()">Start Game</button>
+    </div>
+    <div id="app" style="display:none">
+      
+    </div>
     <script>
+      var app = document.getElementById("app");
+      function startGame() {
+        document.getElementById("welcome").style.display="none";
+        app.style.display = "block";
+      }
     </script>
   </body>
 </html>
