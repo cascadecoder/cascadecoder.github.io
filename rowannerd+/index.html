@@ -68,10 +68,15 @@
 
 </center>
 <script>
+  var signInB = document.getElementById("signInB");
   if(localStorage.getItem("loggedIn") !== null) {
-    var signInB = document.getElementById("signInB");
+    
     signInB.style.display = "none";
   } else {
+  }
+  function signUp() {
+    document.getElementById("signUp").style.display = "block";
+    signInB.style.display="none";
   }
 </script>
   </body>
