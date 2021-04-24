@@ -15,7 +15,7 @@
 <div id="controll">
 <a href="#about">About</a>
 <a href="#subjects">Subjects</a>
-  <button onclick="" id="signInB">Sign In</button>
+  <button onclick="signUp()" id="signInB">Sign Up</button>
 </div>
 
 </div>
@@ -63,6 +63,11 @@
 
 </center>
 <script>
+  if(localStorage.getItem("loggedIn") !== undefined) {
+    var signInB = document.getElementById("signInB");
+    signInB.style.display = "none";
+  } else {
+  }
 </script>
   </body>
 </html>
