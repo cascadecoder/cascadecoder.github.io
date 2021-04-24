@@ -63,7 +63,7 @@
 
 </center>
 <script>
-  if(localStorage.getItem("loggedIn") !== undefined) {
+  if(localStorage.getItem("loggedIn") !== "undefined" || localStorage.getItem("loggedIn") !== "") {
     var signInB = document.getElementById("signInB");
     signInB.style.display = "none";
   } else {
