@@ -83,3 +83,9 @@ background-color: grey;
   button:hover {
     background-color: black;
   }
+#signUp {
+  background-color: rgb(50, 50, 50);
+  color: white;
+  position: fixed;
+  padding: 20px;
+}
