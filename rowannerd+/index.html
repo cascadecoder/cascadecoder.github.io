@@ -78,6 +78,7 @@
   var signInB = document.getElementById("signInB");
   var profilepanel = document.getElementById("profile1");
   var profilewordspot = document.getElementById("profilename1");
+  var profilep = document.getElementById("profile");
   if(localStorage.getItem("loggedIn") !== null) {
     
     signInB.style.display = "none";
@@ -100,6 +101,11 @@
     localStorage.setItem("loggedIn", "yes");
     setupProfile();
     location.reload();
+  }
+  function manage() {
+    profilep.style.display = "block";
+    profilep.innerHTML = "";
+    profile.innerHTML += localStorage.getItem("username");
   }
 </script>
   </body>
