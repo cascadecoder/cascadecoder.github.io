@@ -13,7 +13,7 @@
 <div class="fixed">
 
 <div id="controll">
-  <div id="profile1"><center><div id="profilename1"></div><span>Manage Profile</span></center></div>
+  <div id="profile1" style="color:white"><div id="profilename1"></div><span>Manage Profile</span></div>
 <a href="#about">About</a>
 <a href="#subjects">Subjects</a>
   <button onclick="signUp()" id="signInB">Sign Up</button>
@@ -70,6 +70,7 @@
 </center>
 <script>
   var signInB = document.getElementById("signInB");
+  
   if(localStorage.getItem("loggedIn") !== null) {
     
     signInB.style.display = "none";
