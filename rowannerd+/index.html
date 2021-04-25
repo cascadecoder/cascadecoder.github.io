@@ -90,7 +90,8 @@
      profilepanel.style.display = "block";
   }
   function submitName() {
-    localStorage.setItem("username", document.getElementById("username"));
+    localStorage.setItem("username", document.getElementById("username").value);
+    localStorage.setItem("loggedIn", "yes");
     setupProfile();
   }
 </script>
