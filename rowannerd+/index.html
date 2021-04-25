@@ -89,6 +89,8 @@
     profilewordspot.innerHTML = localStorage.getItem("username");
   }
   function submitName() {
+    localStorage.setItem("username", document.getElementById("username"));
+    setupProfile();
   }
 </script>
   </body>
