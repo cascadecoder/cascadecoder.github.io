@@ -13,6 +13,7 @@
 <div class="fixed">
 
 <div id="controll">
+  <div id="profile1"><center><div id="profilename1"></div><span>Manage Profile</span></center></div>
 <a href="#about">About</a>
 <a href="#subjects">Subjects</a>
   <button onclick="signUp()" id="signInB">Sign Up</button>
@@ -72,6 +73,7 @@
   if(localStorage.getItem("loggedIn") !== null) {
     
     signInB.style.display = "none";
+    
   } else {
   }
   function signUp() {
