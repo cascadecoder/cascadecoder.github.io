@@ -70,16 +70,19 @@
 </center>
 <script>
   var signInB = document.getElementById("signInB");
+  var profilepanel = document.getElementById("profile1");
   
   if(localStorage.getItem("loggedIn") !== null) {
     
     signInB.style.display = "none";
-    
+    showProfilePanel();
   } else {
+    profilepanel.style.display = "none";
   }
   function signUp() {
     document.getElementById("signUp").style.display = "block";
     signInB.style.display="none";
+    
   }
 </script>
   </body>
