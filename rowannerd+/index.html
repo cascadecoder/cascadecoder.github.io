@@ -87,6 +87,7 @@
   }
   function setupProfile() {
     profilewordspot.innerHTML = localStorage.getItem("username");
+     profilepanel.style.display = "block";
   }
   function submitName() {
     localStorage.setItem("username", document.getElementById("username"));
