@@ -17,7 +17,7 @@
 <div class="fixed">
 
 <div id="controll">
-  <div id="profile1" style="color:white"><b><div id="profilename1"></div></b><span id="manageb" onclick="manage()">Manage Profile</span></div>
+  <div id="profile1" style="color:white"><b><div id="profilename1"></div></b><span id="manageb" onclick="account('delete')">I want to delete my account</span></div>
 <a href="#about">About</a>
 <a href="#subjects">Subjects</a>
   <button onclick="signUp()" id="signInB">Sign Up</button>
@@ -107,16 +107,11 @@
     setupProfile();
     location.reload();
   }
-  function manage() {
-    profilep.style.display = "block";
-    profilep.innerHTML = "";
-    profilep.innerHTML += localStorage.getItem("username");
-    profilep.style.width = "400px;";
-    profilep.style.height = "400px;";
-    profilep.innerHTML += "<br><button onclick='close()'>Exit</button>"
-  }
-  function close() {
-    profilep.style.display="none";
+  function account(part) {
+    if (part == "delete") {
+      localStorage.removeItem("username");
+      localStorage.removeItem("loggedIn");
+    }
   }
 </script>
   </body>
