@@ -4,7 +4,7 @@
 <title>rowannerd+</title>
   <link rel="stylesheet" type="text/css" href="https://cascadecoder.github.io/rowannerd+/main.css">
 <style>
-  #manage:hover {
+  #manageb:hover {
     cursor: pointer;
   }
     
@@ -17,7 +17,7 @@
 <div class="fixed">
 
 <div id="controll">
-  <div id="profile1" style="color:white"><b><div id="profilename1"></div></b><span id="manage" onclick="manage()">Manage Profile</span></div>
+  <div id="profile1" style="color:white"><b><div id="profilename1"></div></b><span id="manageb" onclick="manage()">Manage Profile</span></div>
 <a href="#about">About</a>
 <a href="#subjects">Subjects</a>
   <button onclick="signUp()" id="signInB">Sign Up</button>
@@ -114,6 +114,9 @@
     profile.style.width = "400px;";
     profile.style.height = "400px;";
     profile.innerHTML += "<br><button onclick='close()'>Exit</button>"
+  }
+  function close() {
+    profile.style.display="none";
   }
 </script>
   </body>
