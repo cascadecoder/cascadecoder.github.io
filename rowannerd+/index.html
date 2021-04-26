@@ -110,7 +110,7 @@
   function manage() {
     profilep.style.display = "block";
     profilep.innerHTML = "";
-    profile.innerHTML += localStorage.getItem("username");
+    profilep.innerHTML += localStorage.getItem("username");
     profilep.style.width = "400px;";
     profilep.style.height = "400px;";
     profilep.innerHTML += "<br><button onclick='close()'>Exit</button>"
