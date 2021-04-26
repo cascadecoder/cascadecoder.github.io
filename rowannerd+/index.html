@@ -111,12 +111,12 @@
     profilep.style.display = "block";
     profilep.innerHTML = "";
     profile.innerHTML += localStorage.getItem("username");
-    profile.style.width = "400px;";
-    profile.style.height = "400px;";
-    profile.innerHTML += "<br><button onclick='close()'>Exit</button>"
+    profilep.style.width = "400px;";
+    profilep.style.height = "400px;";
+    profilep.innerHTML += "<br><button onclick='close()'>Exit</button>"
   }
   function close() {
-    profile.style.display="none";
+    profilep.style.display="none";
   }
 </script>
   </body>
