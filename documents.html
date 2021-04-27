@@ -1,85 +1,75 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-  <head>
-    <title>Documents | rowannerd</title>
-    <style>
-        body {
-          font-family: monospace;
-          background-color: rgb(138, 220, 255);
-          width: 600px;
-        }
-        button {
-          height: 50px;
-          color: white;
-          background-color: red;
-        }
-        button:hover {
-          background-color: black;
-        }
-      #main {
-        text-align: center;
-      }
-    </style>
-  </head>
-  <body>
+<head>
+<title>Documents | rowannerd</title>
+<style>
+body{font-family:sans-serif;background-color:rgb(255,255,200);}
+button{color:white;background-color:red;height:50px;}
+button:hover{background-color:black;}
+</style>
+</head>
+<body>
+<button onclick="start()" id="startbtn">Make a New Document/Retrieve Previous</button>
 
-      <div id="start">
+<div id="doc">
+<label>Title: </label><input type="text" id="titlet"><br><br>
 
-        <h1 id="main">rowannerd | documents</h1>
-        <button onclick="createNew()">Create New Document</button>
+<textarea rows="10" cols="40" id="maint"></textarea><br><br>
 
-      </div>
+<button onclick="update()">Update</button>
+<i>This will save this document to your computer</i>
+</div>
 
-      <div id="document" style="display:none">
-        <span>Title:</span>
-        <input type="text" id="title">
-        <Br><br>
-        <textarea rows="10" cols="40" id="text"></textarea>
-        <br>
-        <br>
-        <br>
-        <br>
-        <button onclick="t()">Update</button>
-        <br><br><br>
-        <span>HTML result here:</span>
-        <br><span>-------------------</span><br><br>
-        <div id="html"></div>
-    </div>
+<script>
+var title,startbtn,main,doc;
 
-    <!-- End Display -->
+setup();
 
-    <script>
-      var startm = "";
+function setup() {
 
-      function createNew() {
-        startm = document.getElementById("start");
-        startm.style.display="none";
-        document.title = "Untitled | rowannerd document";
-        var board = document.getElementById("document");
-        board.style.display = "block";
-      }
+//Setup Variables
+title = document.getElementById("titlet");
+startbtn = document.getElementById("startbtn");
+main = document.getElementById("maint");
+doc = document.getElementById("doc");
+doc.style.display="none";
 
-      var ti="";
-      var type="rowannerd document";
-      var hs=document.getElementById("htmld");
-      var html = document.getElementById("html");
-      hs.style.display="none";
-      var drop = document.getElementById("drop");
-      var text = document.getElementById("text");
-      
-      function t() {	
-        ti = document.getElementById("title").value;
-        drop = document.getElementById("drop").value;
+}
 
-          type = "HTML sheet";
-          hs.style.display="block";
-          html.innerHTML = text.value;
-          html.style.display="block";
+function start() {
 
+//Show and Hide
+doc.style.display="block";
+startbtn.style.display="none";
 
+//Get Previous Document (saved on localStorage):
+if (localStorage.getItem("title") !== null) {
+title.value = localStorage.getItem("title");
+document.title = title.value + " | rowannerd document";
+main.value = localStorage.getItem("text");
+}
+}
 
-        document.title = ti + " | HTML sheet";
-      }  
-    </script>
-  </body>
+function update() {
+
+//Just in case:
+title = document.getElementById("titlet");
+startbtn = document.getElementById("startbtn");
+main = document.getElementById("maint");
+doc = document.getElementById("doc");
+
+//Change the title:
+//document.title = title.value +  " | rowannerd document";
+
+//Put on localStorage (your device):
+
+localStorage.setItem("title", title.value);
+
+document.title = localStorage.getItem("title") + " | rowannerd document";
+
+localStorage.setItem("text", main.value);
+
+}
+</script>
+</body>
 </html>
