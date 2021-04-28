@@ -111,8 +111,10 @@
   }
   function account(part, link) {
     if (part == "delete") {
-      localStorage.removeItem("username");
-      localStorage.removeItem("loggedIn");
+      if (confirm("Are you sure you want to delete your account?\nAll Progress will be lost.")) {
+        localStorage.removeItem("username");
+        localStorage.removeItem("loggedIn");
+      } else {}
     } else if (part == "link") {
       recent.unshift(link);
       
