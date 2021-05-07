@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+<head>
+
+<title>Math Quiz | rowannerd</title>
+<style>
+body {
+background-color: rgb(200, 200, 200);
+font-family: sans-serif;
+}
+#main {
+background-color: rgb(10, 10, 10);
+margin: auto;
+padding: 15px;
+color: white;
+max-width: 900px;
+}
+#main h1 {
+text-align: center;
+}
+#main h2 {
+text-align: center;
+}
+button {
+color: black;
+border: none;
+}
+button:hover {
+background-color: gray;
+color: white;
+}
+</style>
+</head>
+<body onload="setup()">
+<div id="main">
+<h1>Question <span id="qNum"></span></h1>
+<h2 id="q"></h2>
+<input type="text" placeholder="Put your answer here" id="answer">
+<button onclick="answer()">Answer</button>
+</div>
+
+<script>
+
+var qNumS, qNum, q, a, p1, p2, use, use2, operation, as;
+var operations = ["-", "+"];
+qNum = 0;
+function setup() {
+qNum++;
+qNumS = document.getElementById("qNum");
+
+qNumS.innerHTML = qNum; // By default
+mix("parts");
+mix("operation");
+mix("answer");
+q = p1 + operation + p2;
+document.getElementById("q").innerHTML = q;
+}
+
+function mix(thing)  {
+if (thing == "parts") {
+p1 = Math.random();
+p1 = Math.round(p1*10);
+p2 = Math.random();
+p2 = Math.round(p2*10);
+}
+
+if (thing == "operation") {
+use = 10;
+use2 = 100;
+while (use2 != 1 && use2 != 2) {
+use = Math.random();
+use2 = Math.round(use*10);
+}
+operation = operations[use2-1];
+}
+
+if (thing == "answer") {
+if(operation == "-") {
+a = p1-p2;
+} else {
+a=p1+p2;
+}
+}
+}
+
+function answer() {
+as = document.getElementById("answer");
+if (as.value == a) {
+alert("Hooray!\nYou got it!");
+}else {
+alert("OOPS! YOU GOT IT WRONG!");
+}
+as.value = "";
+setup();
+}
+</script>
+</body>
+</html>
