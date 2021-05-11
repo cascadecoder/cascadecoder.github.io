@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+<head>
+<title>Become the Rich Guy | a rowannerd game</title>
+<style>
+* {
+margin: 0;
+}
+body {
+font-family: sans-serif;
+background-color: rgb(50, 50, 60);
+}
+#main {
+text-align: center;
+padding: 25px;
+border-radius: 25px;
+background-color: white;
+margin: auto;
+width: 600px;
+}
+#main ul {
+text-align: left;
+}
+button {
+border-radius: 5px;
+border: none;
+padding: 5px;
+}
+button:hover {
+background-color: grey;
+}
+</style>
+</head>
+<body>
+<div id="main">
+<h1>Become the Rich Guy</h1>
+<br>
+<h3>Instructions:</h3><br>
+<ul>
+<li>Try to earn lots of money by taking the correct options (instead of just spamming yes or no there <i>is</i> a strategy)</li>
+<li>Try to not get kicked out of the job! (or before the time runs out)</li>
+</ul>
+<br><br>
+<p><b>What are you waiting for? Press start!</b></p><br>
+<button onclick="start()">Start</button>
+</div>
+
+<script>
+var main, income, money, disasters, dCost, dHappen, con, problem, strike, time1, timeReal, display;
+setup();
+function setup() {
+timeReal = 60;
+main = document.getElementById("main");
+money = 0;
+con = "";
+problem = "";
+strike = 0;
+time1 = 0;
+
+}
+function start(thing) {
+main.innerHTML = "<h1>Choose a job</h1><br><button onclick=job('teacher')>Teacher</button><button onclick=job('engineer')>Engineer</button>"
+}
+function job(a) {
+main.innerHTML = "<div id='display'></div>";
+if (a == "teacher") {
+income = 1000.00;
+disaters = ["Car breakdown","Student mayhem"];
+dCost = [1000,500];
+} else {
+income = 2000.00;
+disasters = ["Rocket explodes!","Hand gets cut!"];
+dCost = [2000, 1000];
+}
+dHappen = 1;
+update();
+}
+function update() {
+display = document.getElementById("display");
+money += income/10;
+document.getElementById("display").innerHTML = "Income: $" + income + "<br>Money: $" + money + "<br><br><br>Strikes: " + strike + "<br><br>Time Remaning: " + timeReal;
+if (strike < 3 && timeReal > 0) {
+setTimeout(update, 500);
+timeReal -= 1;
+time1 += 0.5;
+
+}
+if (strike > 2) {
+
+
+end();
+}
+if (!timeReal > 0) {
+
+end();
+}
+if (dHappen == 0) {
+con = confirm(problem);
+if (con == false) {
+money += income;
+
+
+document.getElementById("display").innerHTML = "Income: $" + income + "<br>Money: $" + money + "<br><br><br>Strikes: " + strike + "<br><br>Time Remaning: " + timeReal;
+strike++;
+} else  {
+document.getElementById("display").innerHTML = "Income: $" + income + "<br>Money: $" + money + "<br><br><br>Strikes: " + strike + "<br><br>Time Remaning: " + timeReal;
+dHappen = 1;
+problem = "";
+income += 100;
+if (!strike == 0) {
+strike -= 0.5;
+}
+}
+}
+if (time1 > Math.random()*10) {
+time1 = 0;
+problem = "Your boss wants to have a tax of $" + income/2;
+con = confirm(problem);
+if (con == false) {
+dHappen = 0;
+} else {
+dHappen = 1;
+money -= income/2;
+income += 100;
+}
+}
+}
+
+
+function end() {
+alert("GAME OVER");
+display.innerHTML = "GAME OVER<br>You have finished your job!<br>Money earned: <b>$" + money + "<br></b>Come play again soon!";
+}
+</script>
+
+</body>
+</html>
