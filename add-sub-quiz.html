@@ -11,12 +11,16 @@
   </head>
   <body>
     <h1>Addition and Subtraction Quiz | rowannerd</h1>
-    Q<span id="question"></span>
-    <input type="text" id="in"><button onclick="check()">Check</button><br>
+    <h2>Q<span id="question"></span></h2><br>
+    <input type="text" id="in"placeholder="Type here . . . "><button onclick="check()">Check</button><br>
     <span id="correct"></span><button onclick="next()" style="display:none;">Next</button>
     <script>
+      var qnum, q, qa, answer;
+      qnum = 1;
+      
       function check() {
-        
+        var answer = Number(document.getElementById("in").value);
+        alert(answer);
       }
     </script>
   </body>
