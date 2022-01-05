@@ -15,9 +15,17 @@
     <input type="text" id="in"placeholder="Type here . . . "><button onclick="check()">Check</button><br>
     <span id="correct"></span><button onclick="next()" style="display:none;"id="nextb">Next</button>
     <script>
-      var qnum, q, qa, answer;
-      qnum = 1;
-      
+      var qnum, q, qa, answer,q1,q2;
+      qnum = 0;
+      function generate() {
+        qnum+=1;
+        q1 = randomize();
+        q2 = randomize();
+        alert(q1 + " . " + q2);
+      }
+      function randomize() {
+        return(Math.round(Math.Random()*10));
+      }
       function check() {
         var answer = Number(document.getElementById("in").value);
         alert(answer);
