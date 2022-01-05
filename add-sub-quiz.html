@@ -11,17 +11,20 @@
   </head>
   <body>
     <h1>Addition and Subtraction Quiz | rowannerd</h1>
-    <h2>Q<span id="question"></span></h2><br>
+    <h2>Q<span id="question"></span></h2><h3 id="questiondisplay"></h3><br>
     <input type="text" id="in"placeholder="Type here . . . "><button onclick="check()">Check</button><br>
     <span id="correct"></span><button onclick="next()" style="display:none;"id="nextb">Next</button>
     <script>
       var qnum, q, qa, answer,q1,q2;
       qnum = 0;
+      generate();
       function generate() {
         qnum+=1;
+        document.getElementbyId("question").innerHTML = qnum;
         q1 = randomize();
         q2 = randomize();
         alert(q1 + " . " + q2);
+        document.getElementById("questiondisplay").innerHTML = q1 + " + " + q2;
       }
       function randomize() {
         return(Math.round(Math.Random()*10));
