@@ -23,7 +23,7 @@
 	    input[type=password]:focus {border:none;outline:none;}
     </style>
   </head>
-  <body>
+  <body onload='startUp()'>
     <div id="logInBar" class="center">
 		<span>Log In to CascadeOS: </span>
 		<button onclick="logIn()">Log In</button><br><br>
@@ -57,9 +57,14 @@
 		}
 		function submitSignup() {
 			s('username',id('signUp_username').value);
-			if (get('username') == id('signUp_username').value) {
+			s('password',id('signUp_password').value);
+			if (get('username') == id('signUp_username').value && get('password) == id('signUp_password').value) {
 				alert('Succesfully Signed Up!');
 			}
+			s('signedUp','yes');
+		}
+		function startUp() {
+			
 		}
 	  
 	</script>
