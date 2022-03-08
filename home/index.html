@@ -50,6 +50,12 @@
 		function signUp() {
 			id('insertInfo').style.display = 'block';
 		}
+		function submitSignUp() {
+			s('username',id('signUp_username').value);
+			if (get('username') == id('signUp_username').value) {
+				alert('Succesfully Signed Up!');
+			}
+		}
 	  
 	</script>
   </body>
