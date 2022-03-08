@@ -62,9 +62,12 @@
 				alert('Succesfully Signed Up!');
 			}
 			s('signedUp','yes');
+			location.reload();
 		}
 		function startUp() {
-			
+			if (get('signedUp') == 'yes') {
+				id('logInBar').style.display = 'none';
+			}
 		}
 	  
 	</script>
