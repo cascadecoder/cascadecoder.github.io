@@ -58,9 +58,9 @@
 		function submitSignup() {
 			s('username',id('signUp_username').value);
 			s('password',id('signUp_password').value);
-			if (get('username') == id('signUp_username').value && get('password) == id('signUp_password').value) {
-				alert('Succesfully Signed Up!');
-			}
+			
+				alert('Succesfully Signed Up! with password: ' + id('signUp_password').value);
+			
 			s('signedUp','yes');
 			location.reload();
 		}
