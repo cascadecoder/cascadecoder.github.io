@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CascadeOS | Home v0.0.2</title>
+    <title>CascadeOS | Home v0.0.3</title>
     <style>
 	:root {--text-color: rgb(120,200,230);}
-	body {font-family: monospace;color: var(--text-color); width: 500px;background-color:rgb(80,60,90);}
+	body {font-family: monospace;color: black; width: 500px;background-color:black:}
 	.center {text-align: center;}
 	#logInBar {background-color:rgb(40,30,45);color:white;border-radius:5px;padding:5px;}
 	    button {border:none;border-radius:4px; background-color:rgb(0,0,0); color: white; padding: 2px; font-family: monospace;}
@@ -23,7 +23,7 @@
 	    input[type=password]:focus {border:none;outline:none;}
     </style>
   </head>
-  <body onload='startUp()'>
+  <body onload='startUp()' id="bod">
     <div id="logInBar" class="center">
 		<span>Log In to CascadeOS: </span>
 		<button onclick="logIn()">Log In</button><br><br>
@@ -60,7 +60,7 @@
 			s('username',id('signUp_username').value);
 			s('password',id('signUp_password').value);
 			
-				alert('Succesfully Signed Up! with password: ' + id('signUp_password').value);
+				//alert('Succesfully Signed Up! with password: ' + id('signUp_password').value);
 			
 			s('signedUp','yes');
 			location.reload();
@@ -70,6 +70,8 @@
 				id('logInBar').style.display = 'none';
 				id('userbar').style.display = 'block';
 				id('displayUsername').innerHTML = get('username');
+				id('bod').background-color = 'rgb(80,60,90)';
+				id('bod').color = 'rgb(120,200,230)';
 			} else {
 				id('userbar').style.display = 'none';
 			}
