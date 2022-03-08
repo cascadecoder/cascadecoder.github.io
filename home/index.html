@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CascadeOS | Home v0.0.3</title>
+    <title>CascadeOS | Home v0.0.4</title>
     <style>
 	:root {--text-color: rgb(120,200,230);}
-	body {font-family: monospace;color: black; width: 500px;background-color:black:}
+	body {font-family: monospace;color: rgb(120,200,230);; width: 500px;background-color:rgb(80,60,90);}
 	.center {text-align: center;}
 	#logInBar {background-color:rgb(40,30,45);color:white;border-radius:5px;padding:5px;}
 	    button {border:none;border-radius:4px; background-color:rgb(0,0,0); color: white; padding: 2px; font-family: monospace;}
@@ -70,8 +70,7 @@
 				id('logInBar').style.display = 'none';
 				id('userbar').style.display = 'block';
 				id('displayUsername').innerHTML = get('username');
-				id('bod').background-color = 'rgb(80,60,90)';
-				id('bod').color = 'rgb(120,200,230)';
+
 			} else {
 				id('userbar').style.display = 'none';
 			}
