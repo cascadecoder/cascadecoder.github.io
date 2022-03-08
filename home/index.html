@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CascadeOS | Home v0.0.1</title>
+    <title>CascadeOS | Home v0.0.2</title>
     <style>
 	:root {--text-color: rgb(120,200,230);}
 	body {font-family: monospace;color: var(--text-color); width: 500px;background-color:rgb(80,60,90);}
@@ -32,6 +32,7 @@
 		    <br><br><input type="password" placeholder="password" id="signUp_password"><br><br>
 		    <button onclick="submitSignup()">Submit</button></div>
 	</div>
+	  <div id="userbar">Logged in as: <span id="displayUsername">ERROR - no username</span></div>
 	  
 	  <div id="header"><h1 class="center">CascadeOS - HOME</h1></div>
 	  <div id="about" class="center">
@@ -67,6 +68,10 @@
 		function startUp() {
 			if (get('signedUp') == 'yes') {
 				id('logInBar').style.display = 'none';
+				id('userbar').style.display = 'block';
+				id('displayUsername').innerHTML = get('username');
+			} else {
+				id('userbar').style.display = 'none';
 			}
 		}
 	  
