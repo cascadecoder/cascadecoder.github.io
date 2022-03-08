@@ -17,6 +17,10 @@
 	    input[type=text]:hover {background-color: rgb(230,230,240);border:none;}
 	    input[type=text]:active {border:none;outline:none;}
 	    input[type=text]:focus {border:none;outline:none;}
+	    input[type=password] {font-family: monospace;border-radius:3px;border:none;}
+	    input[type=password]:hover {background-color: rgb(230,230,240);border:none;}
+	    input[type=password]:active {border:none;outline:none;}
+	    input[type=password]:focus {border:none;outline:none;}
     </style>
   </head>
   <body>
@@ -25,7 +29,7 @@
 		<button onclick="logIn()">Log In</button><br><br>
 	    <span>Or sign up: </span> <button onclick="signUp()">Sign Up</button>
 	    <div id="insertInfo">Credentials: <br><input type="text" placeholder="username" id="signUp_username">
-		    <br><br><input type="text" placeholder="password" id="signUp_password"><br><br>
+		    <br><br><input type="password" placeholder="password" id="signUp_password"><br><br>
 		    <button onclick="submitSignup()">Submit</button></div>
 	</div>
 	  
