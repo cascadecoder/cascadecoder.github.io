@@ -63,16 +63,22 @@
 				//alert('Succesfully Signed Up! with password: ' + id('signUp_password').value);
 			
 			s('signedUp','yes');
+			s('loggedIn','yes');
 			location.reload();
 		}
 		function startUp() {
-			if (get('signedUp') == 'yes') {
+			if (get('loggedIn') == 'yes') {
 				id('logInBar').style.display = 'none';
 				id('userbar').style.display = 'block';
 				id('displayUsername').innerHTML = get('username');
 
 			} else {
 				id('userbar').style.display = 'none';
+			}
+		}
+		function logOut() {
+			if (prompt('Enter password to confirm: ') == get('password') {
+				s('loggedIn', 'no');
 			}
 		}
 		
