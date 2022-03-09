@@ -85,7 +85,8 @@
 		function logIn() {
 			if (prompt('Enter username: ') == get('username')) {
 			    if (prompt('Enter password: ') == get('password')) {
-				    
+				    s('loggedIn', 'yes');
+				    location.reload();
 			    }
 			}
 		}
