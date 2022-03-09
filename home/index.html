@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CascadeOS | Home v0.0.4</title>
+    <title>CascadeOS | Home v0.0.5</title>
     <style>
 	:root {--text-color: rgb(120,200,230);}
 	body {font-family: monospace;color: rgb(120,200,230);; width: 500px;background-color:rgb(80,60,90);}
@@ -23,7 +23,7 @@
 	    input[type=password]:focus {border:none;outline:none;}
     </style>
   </head>
-  <body onload='startUp()' id="bod">
+  <body id="bod">
     <div id="logInBar" class="center">
 		<span>Log In to CascadeOS: </span>
 		<button onclick="logIn()">Log In</button><br><br>
@@ -75,6 +75,10 @@
 				id('userbar').style.display = 'none';
 			}
 		}
+		
+		
+		// Start Code:
+		startUp();
 	  
 	</script>
   </body>
