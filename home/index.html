@@ -91,7 +91,7 @@
 			if (prompt('Enter username: ') == get('username')) {
 			    if (prompt('Enter password: ') == get('password')) {
 				    s('loggedIn', 'yes');
-				    document.cookie = "loggedIn=yes";
+				    document.cookie = "loggedIn=yes;expires=Thu, 18 Dec 2050 12:00:00 UTC;";
 				    location.reload();
 			    }
 			}
