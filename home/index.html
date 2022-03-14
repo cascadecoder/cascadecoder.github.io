@@ -83,7 +83,7 @@
 		function logOut() {
 			if (prompt('Enter password to confirm: ') == get('password')) {
 				s('loggedIn', 'no');
-				document.cookie = "loggedIn=no;expires=Thu, 18 Dec 2050 12:00:00 UTC;";
+				document.cookie = "loggedIn=no;";
 				location.reload();
 			}
 		}
@@ -91,7 +91,7 @@
 			if (prompt('Enter username: ') == get('username')) {
 			    if (prompt('Enter password: ') == get('password')) {
 				    s('loggedIn', 'yes');
-				    document.cookie = "loggedIn=yes;expires=Thu, 18 Dec 2050 12:00:00 UTC;";
+				    document.cookie = "loggedIn=yes;";
 				    location.reload();
 			    }
 			}
