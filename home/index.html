@@ -23,7 +23,7 @@
 	    input[type=password]:focus {border:none;outline:none;}
     </style>
 	  <script>
-		  document.cookie = "testing1=Grape";
+		  
 	  </script>
 	  
   </head>
@@ -83,6 +83,7 @@
 		function logOut() {
 			if (prompt('Enter password to confirm: ') == get('password')) {
 				s('loggedIn', 'no');
+				document.cookie = "loggedIn=no;expires=Thu, 18 Dec 2050 12:00:00 UTC;";
 				location.reload();
 			}
 		}
@@ -90,10 +91,13 @@
 			if (prompt('Enter username: ') == get('username')) {
 			    if (prompt('Enter password: ') == get('password')) {
 				    s('loggedIn', 'yes');
+				    document.cookie = "loggedIn=yes";
 				    location.reload();
 			    }
 			}
 		}
+		
+		
 		
 		
 		// Start Code:
