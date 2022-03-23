@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CascadeOS | Home v0.0.8.4</title>
+    <title>CascadeOS | Home v0.0.9.1</title>
     <style>
 	:root {--text-color: rgb(120,200,230);}
 	body {font-family: monospace;color: rgb(120,200,230);; width: 500px;background-color:rgb(80,60,90);}
@@ -65,16 +65,26 @@
 			localStorage.setItem(a,b);
 		}
 		
+		
+		
+		
+		
+		
 		function signUp() {
 			id('insertInfo').style.display = 'block';
 		}
 		function submitSignup() {
-			s('username',id('signUp_username').value);
-			s('password',id('signUp_password').value);
+			if (get('ID') == null || get('ID') == "") {
+				store('ID', 1);
+			} else {
+				store('ID', get('ID') + 1);
+			}
+			var id=get('ID');
+			s('username' + ID,id('signUp_username').value);
+			s('password' + ID,id('signUp_password').value);
 			
 				//alert('Succesfully Signed Up! with password: ' + id('signUp_password').value);
 			
-			s('signedUp','yes');
 			s('loggedIn','yes');
 			location.reload();
 		}
@@ -96,12 +106,15 @@
 			}
 		}
 		function logIn() {
-			if (prompt('Enter username: ') == get('username')) {
-			    if (prompt('Enter password: ') == get('password')) {
-				    s('loggedIn', 'yes');
+			
+			for (i=0;i<get('ID') + 1; i++) {
+				if (prompt('Enter username: ') == get('username')) {
+					if (prompt('Enter password: ') == get('password')) {
+				    		s('loggedIn', 'yes');
 				    
-				    location.reload();
-			    }
+				    		location.reload();
+			    		}
+				}
 			}
 		}
 		
@@ -110,6 +123,7 @@
 		
 		// Start Code:
 		startUp();
+		localStorage.clear();
 	  
 	</script>
   </body>
