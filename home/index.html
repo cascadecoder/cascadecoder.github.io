@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CascadeOS | Home v0.0.9.5</title>
+    <title>CascadeOS | Home v0.0.9.6</title>
     <style>
 	:root {--text-color: rgb(120,200,230);}
 	body {font-family: monospace;color: rgb(120,200,230);; width: 500px;background-color:rgb(80,60,90);}
@@ -106,10 +106,12 @@
 			}
 		}
 		function logIn() {
+			var usernamed = prompt('Enter username: ');
+			var passwordd = prompt('Enter password: ');
 			
 			for (let i=0;i<get('ID') + 1; i++) {
-				if (prompt('Enter username: ') == get('username')) {
-					if (prompt('Enter password: ') == get('password')) {
+				if (usernamed == get('username' + i)) {
+					if (passwordd == get('password' + i)) {
 				    		s('loggedIn', 'yes');
 				    
 				    		location.reload();
