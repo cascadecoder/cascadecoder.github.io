@@ -13,12 +13,16 @@
 			function store(a,b) {
 				localStorage.setItem(a,b);
 			}
+			function get(a) {
+				return localStorage.getItem(a);
+			}
 			function id(a) {
 				return document.getElementById(a);
 			}
 			function save() {
 				store('note',id('bob').value);
 			}
+			id('bob').innerHTML = get('note');
 			
 		</script>
 	</body>
