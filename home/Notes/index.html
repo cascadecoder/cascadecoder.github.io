@@ -10,6 +10,7 @@
 		<h2>Notes</h2>
 		<textarea id="bob" oninput="save()" placeholder="Type here..." rows="30"cols="50"></textarea>
 		<script>
+			var id=0;
 			function store(a,b) {
 				localStorage.setItem(a,b);
 			}
@@ -23,7 +24,7 @@
 				store('note' + id,id('bob').value);
 			}
 			id('bob').innerHTML = get('note' + id);
-			localStorage.clear();
+			//localStorage.clear();
 			
 		</script>
 	</body>
