@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CascadeOS | Home v0.0.8.2</title>
+    <title>CascadeOS | Home v0.0.8.3</title>
     <style>
 	:root {--text-color: rgb(120,200,230);}
 	body {font-family: monospace;color: rgb(120,200,230);; width: 500px;background-color:rgb(80,60,90);}
@@ -83,7 +83,7 @@
 		function logOut() {
 			if (prompt('Enter password to confirm: ') == get('password')) {
 				s('loggedIn', 'no');
-				document.cookie = "loggedIn=no;";
+				
 				location.reload();
 			}
 		}
@@ -91,7 +91,7 @@
 			if (prompt('Enter username: ') == get('username')) {
 			    if (prompt('Enter password: ') == get('password')) {
 				    s('loggedIn', 'yes');
-				    document.cookie = "loggedIn=yes;";
+				    
 				    location.reload();
 			    }
 			}
