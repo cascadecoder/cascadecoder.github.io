@@ -20,9 +20,10 @@
 				return document.getElementById(a);
 			}
 			function save() {
-				store('note',id('bob').value);
+				store('note' + id,id('bob').value);
 			}
-			id('bob').innerHTML = get('note');
+			id('bob').innerHTML = get('note' + id);
+			localStorage.clear();
 			
 		</script>
 	</body>
