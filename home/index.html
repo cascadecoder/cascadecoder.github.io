@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CascadeOS | Home v0.0.9.4</title>
+    <title>CascadeOS | Home v0.0.9.5</title>
     <style>
 	:root {--text-color: rgb(120,200,230);}
 	body {font-family: monospace;color: rgb(120,200,230);; width: 500px;background-color:rgb(80,60,90);}
@@ -75,9 +75,9 @@
 		}
 		function submitSignup() {
 			if (get('ID') == null || get('ID') == "") {
-				store('ID', 1);
+				s('ID', 1);
 			} else {
-				store('ID', get('ID') + 1);
+				s('ID', get('ID') + 1);
 			}
 			var ID=get('ID');
 			s('username' + ID,id('signUp_username').value);
