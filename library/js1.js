@@ -15,3 +15,6 @@ a1.create = function(type, id, content) {
 	param.innerText = content;
 	document.body.appendChild(param);
 };
+a1.click = function(id, action) {
+	id.addEventListener("click", () => {action});
+}
