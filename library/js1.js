@@ -9,9 +9,9 @@ a1.hide = function(id) {
 	a1.id(id).style.display = "none";
 };
 a1.create = function(type, id, content) {
-	const elm = document.createElement(type);
-	elm.id = id;
+	const param = document.createElement(type);
+	param.id = id;
 	
-	//elm.innerText = content;
-	document.body.appendChild(elm);
+	param.innerText = content;
+	document.body.appendChild(param);
 };
