@@ -11,6 +11,7 @@ a1.hide = function(id) {
 a1.create = function(type, id, content) {
 	const elm = document.createElement(type);
 	elm.id = id;
-	elm.innerHTML = content;
+	
+	//elm.innerText = content;
 	document.body.appendChild(elm);
 };
