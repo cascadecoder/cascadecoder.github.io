@@ -16,5 +16,5 @@ a1.create = function(type, id, content) {
 	document.body.appendChild(param);
 };
 a1.random = function() {
-	return Math.round(Math.random*10);
+	return Math.round(Math.random()*10);
 }
