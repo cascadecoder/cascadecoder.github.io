@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CascadeOS | Home v0.0.10.0</title>
+    <title>CascadeOS | Home v0.0.10.2</title>
     <style>
 	:root {--text-color: rgb(120,200,230);}
 	body {font-family: monospace;color: rgb(120,200,230);; width: 500px;background-color:rgb(80,60,90);}
@@ -76,10 +76,13 @@
 			id('insertInfo').style.display = 'block';
 		}
 		function submitSignup() {
-			if (get('ID') == null || get('ID') == "") {
-				s('ID', 1);
-			} else {
-				s('ID', get('ID') + 1);
+			if (checkIfExists() != true ||  id('signUp_username').value != null && id('signUp_password').value != null) {
+				if (get('ID') == null || get('ID') == "") {
+					s('ID', 1);
+				} else {
+				
+					s('ID', get('ID') + 1);
+				}
 			}
 			var ID=get('ID');
 			
@@ -90,6 +93,15 @@
 			
 			logIn();
 			location.reload();
+		}
+		function checkIfExists() {
+			var user = id('signUp_username').value;
+			for (let i = 0; i<get('ID')+1;i++) {
+				if (get('username' + i) == user)  {
+					return true;
+				}
+			}
+			
 		}
 		function startUp() {
 			if (get('loggedIn') == 'yes') {
