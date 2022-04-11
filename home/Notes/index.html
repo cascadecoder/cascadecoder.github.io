@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Notes - CascadeOS v0.11</title>
+		<title>Notes - CascadeOS v1</title>
 		<style>
 			body{font-family:monospace; background-color:rgb(240,230,240);}
 		</style>
@@ -11,21 +11,11 @@
 		<textarea id="bob" placeholder="Type here..." rows="30"cols="50"></textarea>
 		<button onclick="SaveNote()">Save</button>
 		<script>
-			var id=0;
-			function s(a,b) {
-				localStorage.setItem(a,b);
-			}
-			function g(a) {
-				return localStorage.getItem(a);
-			}
-			function id(a) {
-				return document.getElementById(a);
-			}
 			function SaveNote() {
-				s('note', id('bob').innerHTML);
+				localStorage.setItem("note",document.getElementById("bob").value);
 			}
-			id('bob').innerHTML = g('note');
-			alert(g('note');
+			document.getElementById("bob").value = localStorage.getItem("note");
+
 			//localStorage.clear();
 			
 		</script>
