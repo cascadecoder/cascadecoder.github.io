@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Notes - CascadeOS v1</title>
+		<title>Notes - CascadeOS v1.2</title>
 		<style>
 			body{font-family:monospace; background-color:rgb(240,230,240);}
 		</style>
 	</head>
 	<body>
 		<h2>Notes</h2>
-		<textarea id="bob" placeholder="Type here..." rows="30"cols="50"></textarea>
+		<textarea id="bob" oninput="SaveNote()" placeholder="Type here..." rows="30"cols="50"></textarea>
 		<button onclick="SaveNote()">Save</button>
 		<script>
 			function SaveNote() {
