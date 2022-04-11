@@ -9,7 +9,7 @@
 	<body>
 		<h2>Notes</h2>
 		<textarea id="bob" oninput="SaveNote()" placeholder="Type here..." rows="30"cols="50"></textarea>
-		<button onclick="SaveNote()">Save</button>
+
 		<script>
 			function SaveNote() {
 				localStorage.setItem("note",document.getElementById("bob").value);
