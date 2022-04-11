@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CascadeOS | Home v0.0.9.9</title>
+    <title>CascadeOS | Home v0.0.9.10</title>
     <style>
 	:root {--text-color: rgb(120,200,230);}
 	body {font-family: monospace;color: rgb(120,200,230);; width: 500px;background-color:rgb(80,60,90);}
@@ -39,6 +39,7 @@
 		    <button onclick="submitSignup()">Submit</button></div>
 	</div>
 	  <div id="userbar">Logged in as: <b><span id="displayUsername">ERROR - no username</span></b> <button onclick="logOut()">Log Out</button></div>
+	  <button onclick="deleteAll()">Delete All Accounts</button>
 	  
 	  <div id="header"><h1 class="center">CascadeOS - HOME</h1></div>
 	  <div id="about" class="center">
@@ -129,7 +130,7 @@
 		
 		// Start Code:
 		startUp();
-		localStorage.clear();
+		//localStorage.clear();
 	  
 	</script>
   </body>
