@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Notes - CascadeOS v0.9</title>
+		<title>Notes - CascadeOS v0.10</title>
 		<style>
 			body{font-family:monospace; background-color:rgb(240,230,240);}
 		</style>
@@ -21,9 +21,10 @@
 				return document.getElementById(a);
 			}
 			function SaveNote() {
-				s('note', id('bob').value);
+				s('note', id('bob').innerHTML);
 			}
-			id('bob').value = g('note');
+			id('bob').innerHTML = g('note');
+			alert(g('note');
 			//localStorage.clear();
 			
 		</script>
