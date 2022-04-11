@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Notes - CascadeOS v1.2</title>
+		<title>Notes - CascadeOS v0.9</title>
 		<style>
 			body{font-family:monospace; background-color:rgb(240,230,240);}
 		</style>
 	</head>
 	<body>
 		<h2>Notes</h2>
-		<textarea id="bob" oninput="save()" placeholder="Type here..." rows="30"cols="50"></textarea>
+		<textarea id="bob" oninput="SaveNote()" placeholder="Type here..." rows="30"cols="50"></textarea>
 		<script>
 			var id=0;
-			function store(a,b) {
+			function s(a,b) {
 				localStorage.setItem(a,b);
 			}
-			function get(a) {
+			function g(a) {
 				return localStorage.getItem(a);
 			}
 			function id(a) {
 				return document.getElementById(a);
 			}
-			function save() {
-				store('note', id('bob').value);
+			function SaveNote() {
+				s('note', id('bob').value);
 			}
-			id('bob').value = get('note');
+			id('bob').value = g('note');
 			//localStorage.clear();
 			
 		</script>
