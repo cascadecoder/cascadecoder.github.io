@@ -64,6 +64,7 @@
 		function s(a,b) {
 			localStorage.setItem(a,b);
 		}
+		var currentID;
 		
 		
 		
@@ -80,6 +81,7 @@
 				s('ID', get('ID') + 1);
 			}
 			var ID=get('ID');
+			
 			s('username' + ID,id('signUp_username').value);
 			s('password' + ID,id('signUp_password').value);
 			
@@ -99,7 +101,7 @@
 			}
 		}
 		function logOut() {
-			if (prompt('Enter password to confirm: ') == get('password')) {
+			if (prompt('Enter password to confirm: ') == get('password' + get('currentID'))) {
 				s('loggedIn', 'no');
 				
 				location.reload();
@@ -108,14 +110,16 @@
 		function logIn() {
 			var usernamed = prompt('Enter username: ');
 			var passwordd = prompt('Enter password: ');
-			
-			for (let i=0;i<get('ID') + 1; i++) {
-				if (usernamed == get('username' + i)) {
-					if (passwordd == get('password' + i)) {
-				    		s('loggedIn', 'yes');
-				    		s('currentID', i);
-				    		location.reload();
-			    		}
+			if (usernamed != null && passwordd != null) {
+				for (let i=0;i<get('ID') + 1; i++) {
+					if (usernamed == get('username' + i)) {
+						if (passwordd == get('password' + i)) {
+				    			s('loggedIn', 'yes');
+				    			s('currentID', i);
+				    			location.reload();
+							return 0;
+			    			}
+					}
 				}
 			}
 		}
