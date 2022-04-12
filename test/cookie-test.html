@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title></title>
+    <title>1234</title>
   </head>
-  <body>
-    <script></script>
+  <body onload="cookieMake()">
+    <script>
+      function cookieMake() {
+        var MyArray = ['Bob', '1234'];
+        document.cookie = "data=" + MyArray;
+      }
+    </script>
   </body>
 </html>
