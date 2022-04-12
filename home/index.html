@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CascadeOS | Home v0.0.10.2</title>
+    <title>CascadeOS | Home v0.1.0</title>
     <style>
 	:root {--text-color: rgb(120,200,230);}
 	body {font-family: monospace;color: rgb(120,200,230);; width: 500px;background-color:rgb(80,60,90);}
@@ -139,6 +139,7 @@
 		function deleteAll() {
 			if(confirm("Are you sure you want to do this?")) {
 				localStorage.clear();
+				location.reload();
 			}
 		}
 		
