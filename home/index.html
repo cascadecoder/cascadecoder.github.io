@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CascadeOS | Home v0.1.0</title>
+    <title>CascadeOS | Home v0.1.1</title>
     <style>
 	:root {--text-color: rgb(120,200,230);}
 	body {font-family: monospace;color: rgb(120,200,230);; width: 500px;background-color:rgb(80,60,90);}
@@ -109,6 +109,7 @@
 				id('userbar').style.display = 'block';
 				id('content').style.display = 'block';
 				id('displayUsername').innerHTML = get('username' + get('currentID'));
+				document.cookie = "userData=" + get('currentID') + ";path:/";
 			} else {
 				id('userbar').style.display = 'none';
 			}
@@ -117,6 +118,8 @@
 			if (prompt('Enter password to confirm: ') == get('password' + get('currentID'))) {
 				s('loggedIn', 'no');
 				
+				s('currentID', null);
+				document.cookie = "userData=";
 				location.reload();
 			}
 		}
@@ -129,6 +132,8 @@
 						if (passwordd == get('password' + i)) {
 				    			s('loggedIn', 'yes');
 				    			s('currentID', i);
+							
+							document.cookie = "userData=" + i + ";path:/";
 				    			location.reload();
 							return 0;
 			    			}
