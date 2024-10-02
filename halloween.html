@@ -29,27 +29,28 @@
 
             var scheduler = [];
             // function ATS is "Add to Schedule". Adds a function identifier and how many times the function should be run
-            function ATS(identifier, init) {
+            function ATS(identifier, input, init) {
                 scheduler.push(identifier);
+                scheduler.push(input);
                 scheduler.push(init);
             }
             // Test values
-            ATS("test", 1);
-            ATS("sus", 0);
+            ATS("test", "amongys", 1);
+            
             
             // This function is run every 100 ms (1/10 of a second), and each time goes through the scheduler and executes each function.
             // This is also the core game loop
-            // Might need to add a third value of the input of the function being run!!!
             function clock() {
                 let toDelete = [];
                 // Loop through the scheduler list
-                for (let i = 0; i < scheduler.length; i+=2) {
+                for (let i = 0; i < scheduler.length; i+=3) {
                     let cur = scheduler[i];
-                    let curi = scheduler[i+1];
+                    let in = scheduler[i+1];
+                    let curi = scheduler[i+2];
                     // Checks the function identifier, executes the function
                     switch (cur) {
                         case "test":
-                            alert("Switch got swatched");
+                            alert(in);
                             break;
                         case "sus":
                             alert("sussy baka")
@@ -57,13 +58,14 @@
                     }
                     // Decreases the iteration of the function, and if it's at 0, add it to be deleted
                     if (curi >= 1) {
-                        scheduler[i+1] -= 1;
+                        scheduler[i+2] -= 1;
                     } else {
                         toDelete.push(i);
                     }
                 }
                 // Goes through functions to be deleted and removes them from the scheduler
                 for (let i = toDelete.length-1; i >= 0; i--) {
+                    scheduler.pop(i);
                     scheduler.pop(i);
                     scheduler.pop(i);
                 }
