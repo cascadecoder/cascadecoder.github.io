@@ -14,9 +14,8 @@
         </style>
     </head>
     <body>
-        <h1 id="sus">When the imposter is SUS!!!</h1>
-        <h1 id="dbg">dbg</h1>
-        <button onclick="ATS('test', 3)">HI</button>
+        <h1 id="sus"></h1>
+        <button onclick="fancyText('Welcome to OHIO')">click</button>
         <script>
             // Gets an element based on id, either from the body or from a more specific element
             function elem(a,b) {
@@ -34,8 +33,7 @@
                 scheduler.push(input);
                 scheduler.push(init);
             }
-            // Test values
-            ATS("test", "amongys", 1);
+            
             
             
             // This function is run every 100 ms (1/10 of a second), and each time goes through the scheduler and executes each function.
@@ -45,15 +43,20 @@
                 // Loop through the scheduler list
                 for (let i = 0; i < scheduler.length; i+=3) {
                     let cur = scheduler[i];
-                    let in = scheduler[i+1];
+                    let input = scheduler[i+1];
                     let curi = scheduler[i+2];
                     // Checks the function identifier, executes the function
                     switch (cur) {
                         case "test":
-                            alert(in);
+                            alert(input[0] + input[1]);
                             break;
                         case "sus":
                             alert("sussy baka")
+                            break;
+                        case "text":
+                            //alert("s")
+                            // Input 0 = element; input 1 = string; input 2 = already;
+                            input[0].innerHTML = input[2] + input[1].substring(0,input[1].length-curi);
                             break;
                     }
                     // Decreases the iteration of the function, and if it's at 0, add it to be deleted
@@ -69,6 +72,10 @@
                     scheduler.pop(i);
                     scheduler.pop(i);
                 }
+            }
+
+            function fancyText(string) {
+                ATS('text', [header, string, header.innerHTML],string.length);
             }
         </script>
     </body>
