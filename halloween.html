@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <!-- Import a creepy font from google -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Sixtyfour+Convergence&display=swap" rel="stylesheet">
@@ -17,25 +18,35 @@
         <h1 id="dbg">dbg</h1>
         <button onclick="ATS('test', 3)">HI</button>
         <script>
+            // Gets an element based on id, either from the body or from a more specific element
             function elem(a,b) {
                 return (b != null) ? a.getElementById(b) : document.getElementById(a);
             }
+            // For testing purposes
             var header=elem("sus");
 
             var run = setInterval(clock, 100); // Runs every 100 ms (1/10 of a second);
 
             var scheduler = [];
+            // function ATS is "Add to Schedule". Adds a function identifier and how many times the function should be run
             function ATS(identifier, init) {
                 scheduler.push(identifier);
                 scheduler.push(init);
             }
+            // Test values
             ATS("test", 1);
             ATS("sus", 0);
+            
+            // This function is run every 100 ms (1/10 of a second), and each time goes through the scheduler and executes each function.
+            // This is also the core game loop
+            // Might need to add a third value of the input of the function being run!!!
             function clock() {
                 let toDelete = [];
+                // Loop through the scheduler list
                 for (let i = 0; i < scheduler.length; i+=2) {
                     let cur = scheduler[i];
                     let curi = scheduler[i+1];
+                    // Checks the function identifier, executes the function
                     switch (cur) {
                         case "test":
                             alert("Switch got swatched");
@@ -44,12 +55,14 @@
                             alert("sussy baka")
                             break;
                     }
+                    // Decreases the iteration of the function, and if it's at 0, add it to be deleted
                     if (curi >= 1) {
                         scheduler[i+1] -= 1;
                     } else {
                         toDelete.push(i);
                     }
                 }
+                // Goes through functions to be deleted and removes them from the scheduler
                 for (let i = toDelete.length-1; i >= 0; i--) {
                     scheduler.pop(i);
                     scheduler.pop(i);
