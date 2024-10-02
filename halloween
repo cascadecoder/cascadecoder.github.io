@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Sixtyfour+Convergence&display=swap" rel="stylesheet">
+        <title>Among Us</title>
+        <style>
+            body {
+                background-color: rgb(4, 17, 36);
+                font-family: "Sixtyfour Convergence";
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="sus">When the imposter is SUS!!!</h1>
+        <h1 id="dbg">dbg</h1>
+        <button onclick="ATS('test', 3)">HI</button>
+        <script>
+            function elem(a,b) {
+                return (b != null) ? a.getElementById(b) : document.getElementById(a);
+            }
+            var header=elem("sus");
+
+            var run = setInterval(clock, 100); // Runs every 100 ms (1/10 of a second);
+
+            var scheduler = [];
+            function ATS(identifier, init) {
+                scheduler.push(identifier);
+                scheduler.push(init);
+            }
+            ATS("test", 1);
+            ATS("sus", 0);
+            function clock() {
+                let toDelete = [];
+                for (let i = 0; i < scheduler.length; i+=2) {
+                    let cur = scheduler[i];
+                    let curi = scheduler[i+1];
+                    switch (cur) {
+                        case "test":
+                            alert("Switch got swatched");
+                            break;
+                        case "sus":
+                            alert("sussy baka")
+                            break;
+                    }
+                    if (curi >= 1) {
+                        scheduler[i+1] -= 1;
+                    } else {
+                        toDelete.push(i);
+                    }
+                }
+                for (let i = toDelete.length-1; i >= 0; i--) {
+                    scheduler.pop(i);
+                    scheduler.pop(i);
+                }
+            }
+        </script>
+    </body>
+</html>
