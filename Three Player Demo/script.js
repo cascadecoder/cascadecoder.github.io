@@ -68,7 +68,7 @@ class Particle {
             ctx.strokeStyle = "rgba(0,0,0," + this.life/this.maxLife + ")";
             ctx.stroke();
             ctx.strokeStyle="black";
-0            
+            
         }
         ctx.globalAlpha = 1;
         this.x += this.xv;
@@ -202,6 +202,9 @@ class Player {
         this.xv *= 1 + this.tagged * 0.1 * (!this.ghost); // extra boost (tiny) for the , but not if they are ghost
         if (this.xv % 10 == 0) {
             this.xv *= 1 + this.fast * 0.5;
+        }
+        if (this.ghost){
+            this.xv *= 1.3;
         }
         
     }
