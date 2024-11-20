@@ -76,7 +76,7 @@ function startGame() {
 }
 // Runs every 50ms
 function gameTick() {
-    tick++;
+    
 
     // Erase the screen
     ctx.fillStyle = "white";
@@ -85,7 +85,7 @@ function gameTick() {
     renderUI();
     handleConnectors()
     if (!gameRunning) {return}
-
+    tick++;
     // Render the players
     displayParticles()
     ctx.globalAlpha = 1;
