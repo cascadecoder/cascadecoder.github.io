@@ -21,3 +21,10 @@ h1 {
 .body1 {
   background-color: #b5143c;
 }
+
+div {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  height: auto;
+}
