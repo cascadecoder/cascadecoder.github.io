@@ -11,3 +11,13 @@ body {
 h1 {
   text-align: center;
 }
+
+.header {
+  padding: 10px;
+  margin: 5px;
+  background-color: #bed1eb;
+}
+
+.body1 {
+  background-color: #b5143c;
+}
