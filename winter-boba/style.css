@@ -5,4 +5,9 @@
 
 body {
   background-color: #8ebdfa;
+  font-family: "Sour Gummy", sans-serif;
+}
+
+h1 {
+  text-align: center;
 }
