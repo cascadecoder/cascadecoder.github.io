@@ -8,10 +8,6 @@ body {
   font-family: Arial, sans-serif;
 }
 
-h1 {
-  text-align: center;
-}
-
 .header {
   margin-top: 20px;
   background-color: #bed1eb;
@@ -28,4 +24,5 @@ div {
   width: 50%;
   height: auto;
   border-radius: 20px;
+  text-align: center;
 }
